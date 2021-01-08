@@ -7,7 +7,7 @@
 #include <libgba-sprite-engine/gba/tonc_memdef.h>
 #include <libgba-sprite-engine/gba_engine.h>
 #include <libgba-sprite-engine/effects/fade_out_scene.h>
-#include "sample_start_scene.h"
+#include "pod_scene.h"
 #include "flying_stuff_scene.h"
 
 #include "lama.h"

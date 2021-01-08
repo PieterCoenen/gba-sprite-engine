@@ -5,7 +5,7 @@
 #include <libgba-sprite-engine/palette/palette_manager.h>
 #include <libgba-sprite-engine/allocator.h>
 
-#include "sample_start_scene.h"
+#include "pod_scene.h"
 
 /**
  * shared palette extracted from grit

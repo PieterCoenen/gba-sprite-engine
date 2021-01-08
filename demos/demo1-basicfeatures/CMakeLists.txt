@@ -3,7 +3,7 @@ project(flyingstuff)
 add_executable(${PROJECT_NAME}.elf
         src/main.cpp
         src/sample_start_scene.cpp
-        src/sample_start_scene.h
+        src/pod_scene.h
         src/lama.h
         src/sample_sound.h
         src/kul.h
