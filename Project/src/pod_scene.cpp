@@ -2,7 +2,7 @@
 #include <libgba-sprite-engine/background/text_stream.h>
 #include <libgba-sprite-engine/gba/tonc_memdef.h>
 #include <libgba-sprite-engine/gba_engine.h>
-#include "sample_start_scene.h"
+#include "pod_scene.h"
 
 std::vector<Background *> SampleStartScene::backgrounds() {
     return {};
@@ -23,6 +23,4 @@ void SampleStartScene::tick(u16 keys) {
         engine->getTimer()->toggle();
         pressingAorB = false;
     }
-
-
 }

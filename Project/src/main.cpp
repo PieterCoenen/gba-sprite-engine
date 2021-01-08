@@ -5,14 +5,15 @@
 #include <libgba-sprite-engine/palette/palette_manager.h>
 #include <libgba-sprite-engine/allocator.h>
 
-#include "sample_start_scene.h"
+#include "pod_scene.h"
+#include "SplashScreen.h"
 
 int main(){
 
     std::shared_ptr<GBAEngine> engine(new GBAEngine());
 
-    auto startScene = new SampleStartScene(engine);
-    engine->setScene(startScene);
+    auto scene = new SplashScreen(engine);
+    engine->setScene(scene);
 
     while (true) {
         engine->update();
