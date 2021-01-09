@@ -5,7 +5,11 @@ add_executable(${PROJECT_NAME}.elf
         src/pod_scene.cpp
         src/pod_scene.h
         src/SplashScreen.cpp
-        src/SplashScreen.h)
+        src/SplashScreen.h
+        src/Item.cpp
+        src/Item.h
+        src/crewmate.cpp
+        src/crewmate.h)
 
 target_link_libraries(${PROJECT_NAME}.elf gba-sprite-engine)
 
