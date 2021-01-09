@@ -4,23 +4,18 @@
 #include <libgba-sprite-engine/gba_engine.h>
 #include "pod_scene.h"
 
-std::vector<Background *> SampleStartScene::backgrounds() {
+std::vector<Background *> PodScene::backgrounds() {
     return {};
 }
 
-std::vector<Sprite *> SampleStartScene::sprites() {
-    return {  animation.get(), finalFantasyGuy.get() };
+std::vector<Sprite *> PodScene::sprites() {
+    return {};
 }
 
-void SampleStartScene::load() {
-
+void PodScene::load() {
+    engine.get()->enableText();
 }
 
-void SampleStartScene::tick(u16 keys) {
-    TextStream::instance().setText(engine->getTimer()->to_string(), 18, 1);
+void PodScene::tick(u16 keys) {
 
-    if(pressingAorB && !((keys & KEY_A) || (keys & KEY_B))) {
-        engine->getTimer()->toggle();
-        pressingAorB = false;
-    }
 }
