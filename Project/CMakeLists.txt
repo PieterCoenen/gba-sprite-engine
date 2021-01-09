@@ -9,7 +9,9 @@ add_executable(${PROJECT_NAME}.elf
         src/Item.cpp
         src/Item.h
         src/crewmate.cpp
-        src/crewmate.h)
+        src/crewmate.h
+        src/Element.cpp
+        src/Element.h)
 
 target_link_libraries(${PROJECT_NAME}.elf gba-sprite-engine)
 
