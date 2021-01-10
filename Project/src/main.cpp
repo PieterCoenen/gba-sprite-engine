@@ -1,7 +1,7 @@
 #include <libgba-sprite-engine/scene.h>
 #include <libgba-sprite-engine/gba_engine.h>
 
-#include "pod_scene.h"
+#include "PodScene.h"
 #include "SplashScreen.h"
 
 int main(){

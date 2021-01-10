@@ -2,7 +2,7 @@
 #include <libgba-sprite-engine/effects/fade_out_scene.h>
 
 #include "SplashScreen.h"
-#include "pod_scene.h"
+#include "PodScene.h"
 #include "StartScene.h"
 
 SplashScreen::SplashScreen(const std::shared_ptr<GBAEngine> &engine) : Scene(engine) {}

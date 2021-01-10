@@ -2,8 +2,8 @@ project(spaceDisaster)
 
 add_executable(${PROJECT_NAME}.elf
         src/main.cpp
-        src/pod_scene.cpp
-        src/pod_scene.h
+        src/PodScene.h
+        src/PodScene.cpp
         src/SplashScreen.cpp
         src/SplashScreen.h
         src/Item.cpp

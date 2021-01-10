@@ -7,7 +7,7 @@
 #include <libgba-sprite-engine/gba/tonc_memdef.h>
 #include <libgba-sprite-engine/gba_engine.h>
 #include "StartScene.h"
-#include "pod_scene.h"
+#include "PodScene.h"
 
 StartScene::StartScene(const std::shared_ptr<GBAEngine> &engine) : Scene(engine), color("red") {}
 
