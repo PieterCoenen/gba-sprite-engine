@@ -13,7 +13,7 @@ public:
     std::vector<Sprite *> sprites() override;
     std::vector<Background *> backgrounds() override;
 
-    PodScene(std::shared_ptr<GBAEngine> engine) : Scene(engine) {}
+    PodScene(std::shared_ptr<GBAEngine> engine, std::string color) : Scene(engine) {}
 
     void load() override;
     void tick(u16 keys) override;
