@@ -13,6 +13,7 @@
 
 class Crewmate{
 private:
+    std::string color;
 
 public:
     Crewmate();

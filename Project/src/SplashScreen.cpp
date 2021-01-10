@@ -3,6 +3,7 @@
 
 #include "SplashScreen.h"
 #include "pod_scene.h"
+#include "StartScene.h"
 
 SplashScreen::SplashScreen(const std::shared_ptr<GBAEngine> &engine) : Scene(engine) {}
 
@@ -18,7 +19,7 @@ std::vector<Background *> SplashScreen::backgrounds() {
 
 void SplashScreen::tick(u16 keys) {
     if(keys & KEY_ANY) {
-        engine->setScene(new PodScene(engine));
+        engine->setScene(new StartScene(engine));
     }
 }
 

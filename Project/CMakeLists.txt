@@ -11,7 +11,9 @@ add_executable(${PROJECT_NAME}.elf
         src/crewmate.cpp
         src/crewmate.h
         src/Element.cpp
-        src/Element.h)
+        src/Element.h
+        src/StartScene.cpp
+        src/StartScene.h)
 
 target_link_libraries(${PROJECT_NAME}.elf gba-sprite-engine)
 
