@@ -24,6 +24,18 @@ void PodScene::load() {
             .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
             .withLocation(10,10) //location is now just a random value
             .buildPtr();
+    auto dummy1 = SpriteBuilder<Sprite>()
+            .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
+            .withLocation(20,20) //location is now just a random value
+            .buildPtr();
+    auto dummy2 = SpriteBuilder<Sprite>()
+            .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
+            .withLocation(10,20) //location is now just a random value
+            .buildPtr();
+    auto dummy3 = SpriteBuilder<Sprite>()
+            .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
+            .withLocation(20,10) //location is now just a random value
+            .buildPtr();
 }
 
 void PodScene::tick(u16 keys) {

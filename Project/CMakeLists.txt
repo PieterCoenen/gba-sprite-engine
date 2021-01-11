@@ -15,7 +15,8 @@ add_executable(${PROJECT_NAME}.elf
         src/SpriteData.h
         src/PodScene.h
         src/PodScene.cpp
-        )
+        src/ControlRoomScene.cpp
+        src/ControlRoomScene.h)
 
 target_link_libraries(${PROJECT_NAME}.elf gba-sprite-engine)
 
