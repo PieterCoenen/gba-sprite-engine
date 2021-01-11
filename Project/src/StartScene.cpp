@@ -9,7 +9,7 @@
 #include "StartScene.h"
 #include "PodScene.h"
 
-StartScene::StartScene(const std::shared_ptr<GBAEngine> &engine) : Scene(engine), color("red") {}
+StartScene::StartScene(const std::shared_ptr<GBAEngine> &engine) : Scene(engine), color() {}
 
 void StartScene::fillColors() {
     colors.push_back("red");
@@ -17,6 +17,7 @@ void StartScene::fillColors() {
     colors.push_back("black");
     colors.push_back("green");
     colors.push_back("purple");
+    color = colors[0];
 }
 
 std::vector<Background *> StartScene::backgrounds() {

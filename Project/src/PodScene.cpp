@@ -7,6 +7,7 @@
 #include <libgba-sprite-engine/gba/tonc_memdef.h>
 #include <libgba-sprite-engine/gba_engine.h>
 #include "PodScene.h"
+#include "SpriteData.h"
 
 std::vector<Background *> PodScene::backgrounds() {
     return {};
@@ -18,6 +19,11 @@ std::vector<Sprite *> PodScene::sprites() {
 
 void PodScene::load() {
     engine.get()->enableText();
+
+    auto keyCard = SpriteBuilder<Sprite>()
+            .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
+            .withLocation(10,10) //location is now just a random value
+            .buildPtr();
 }
 
 void PodScene::tick(u16 keys) {
@@ -30,7 +36,7 @@ void PodScene::tick(u16 keys) {
 
     } else if(keys & KEY_DOWN) {
 
-    } else if(keys & KEY_B) {
+    } else if(keys & KEY_A) {
 
     } else if(keys & KEY_B) {
 

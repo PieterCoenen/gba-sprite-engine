@@ -2,18 +2,20 @@ project(spaceDisaster)
 
 add_executable(${PROJECT_NAME}.elf
         src/main.cpp
-        src/PodScene.h
-        src/PodScene.cpp
         src/SplashScreen.cpp
         src/SplashScreen.h
+        src/StartScene.cpp
+        src/StartScene.h
         src/Item.cpp
         src/Item.h
         src/crewmate.cpp
         src/crewmate.h
         src/Element.cpp
         src/Element.h
-        src/StartScene.cpp
-        src/StartScene.h)
+        src/SpriteData.h
+        src/PodScene.h
+        src/PodScene.cpp
+        )
 
 target_link_libraries(${PROJECT_NAME}.elf gba-sprite-engine)
 
