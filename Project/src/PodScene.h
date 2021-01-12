@@ -9,6 +9,8 @@ class PodScene : public Scene {
 private:
     std::unique_ptr<Sprite> avatar;
 
+    std::unique_ptr<Sprite> keyCard;
+
 public:
     std::vector<Sprite *> sprites() override;
     std::vector<Background *> backgrounds() override;

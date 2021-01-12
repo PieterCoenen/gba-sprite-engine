@@ -15,7 +15,7 @@ std::vector<Background *> PodScene::backgrounds() {
 }
 
 std::vector<Sprite *> PodScene::sprites() {
-    return { avatar.get()};
+    return { avatar.get(), keyCard.get()};
 }
 
 void PodScene::load() {
@@ -29,10 +29,11 @@ void PodScene::load() {
             .withLocation(50, 50)
             .buildPtr();
 
-    auto keyCard = builder
+    keyCard = builder
             .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
             .withLocation(10,10) //location is now just a random value
             .buildPtr();
+
     auto dummy1 = builder
             .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
             .withLocation(230,10) //location is now just a random value
