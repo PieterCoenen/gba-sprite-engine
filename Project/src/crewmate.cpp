@@ -18,3 +18,9 @@ bool Crewmate::useItem(Item item) {
         return false;
     }
 }
+
+bool Crewmate::interactableItem() {
+    //if you touch a sprite return true otherwise return false
+
+    return true;
+}

@@ -24,6 +24,7 @@ public:
 
     bool useItem(Item item);
 
+    bool interactableItem();
 };
 
 

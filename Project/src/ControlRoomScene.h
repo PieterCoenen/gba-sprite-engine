@@ -12,7 +12,7 @@
 
 class ControlRoomScene : public Scene{
 private:
-
+    std::unique_ptr<Sprite> avatar;
 
 public:
     std::vector<Sprite *> sprites() override;
