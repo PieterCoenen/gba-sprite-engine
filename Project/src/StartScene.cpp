@@ -14,9 +14,10 @@ StartScene::StartScene(const std::shared_ptr<GBAEngine> &engine) : Scene(engine)
 void StartScene::fillColors() {
     colors.push_back("red");
     colors.push_back("blue");
-    colors.push_back("black");
+    colors.push_back("white");
     colors.push_back("green");
     colors.push_back("purple");
+    colors.push_back("Yellow");
     color = colors[0];
 }
 
