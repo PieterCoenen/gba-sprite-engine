@@ -10,13 +10,13 @@
 #include "Element.h"
 
 bool Element::isInteractive(Element element){
-
+    return true;
 }
 
 bool Element::hasItem(Element element){
-
+    return true;
 }
 
 bool Element::needsItem(Element element, Item item){
-
+    return true;
 }
