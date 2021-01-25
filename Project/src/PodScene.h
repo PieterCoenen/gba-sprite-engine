@@ -12,6 +12,7 @@ private:
     std::unique_ptr<Sprite> keyCard;
     std::unique_ptr<Sprite> decoy;
 
+    std::unique_ptr<Sprite> door;
 
 public:
     std::vector<Sprite *> sprites() override;

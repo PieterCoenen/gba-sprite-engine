@@ -8,6 +8,9 @@
 #include <libgba-sprite-engine/gba_engine.h>
 #include "PodScene.h"
 #include "SpriteData.h"
+#include "crewmate.h"
+#include "Item.h"
+#include "ControlRoomScene.h"
 
 std::vector<Background *> PodScene::backgrounds() {
     return {};
@@ -45,9 +48,17 @@ void PodScene::load() {
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(230,150)
             .buildPtr();
+
+    decoy = builder
+            //.withData(ballTiles, sizeof(ballTiles)) needs to be made
+            //.withLocation(230,150) needs to be searched
+            .buildPtr();
 }
 
 void PodScene::tick(u16 keys) {
+
+    Crewmate crewmate;
+    Item item;
 
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
@@ -61,14 +72,17 @@ void PodScene::tick(u16 keys) {
         if (avatar->collidesWith(*keyCard)){
             TextStream::instance().setText(std::string("You found the key card!") , 5, 10);
             TextStream::instance().clear();
+            crewmate.items.push_back("keyCard");
         }else if (avatar->collidesWith(*decoy)){
             TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
             TextStream::instance().clear();
+        }else if (avatar->collidesWith(*door)){
+            if (crewmate.useItem("keyCard")){
+                engine.get()->setScene(new ControlRoomScene(engine));
+            }
         }else{
             TextStream::instance().setText(std::string("No interactable item found!") , 5, 10);
             TextStream::instance().clear();
         }
-    } else if(keys & KEY_B) {
-
     }
 }

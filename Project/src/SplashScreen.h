@@ -1,7 +1,3 @@
-//
-// Created by Wouter Groeneveld on 29/11/18.
-//
-
 #ifndef GBA_SPRITE_ENGINE_PROJECT_SPLASHSCREEN_H
 #define GBA_SPRITE_ENGINE_PROJECT_SPLASHSCREEN_H
 

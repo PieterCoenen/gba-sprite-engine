@@ -10,8 +10,9 @@
 #include <vector>
 
 class Item{
-private:
+public:
 
+    std::string keyCard;
 };
 
 

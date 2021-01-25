@@ -18,11 +18,11 @@ private:
 public:
     Crewmate();
 
-    std::vector<Item> items;
+    std::vector<std::string> items;
 
     void interact();
 
-    bool useItem(Item item);
+    bool useItem(std::string item);
 
     bool interactableItem();
 };
