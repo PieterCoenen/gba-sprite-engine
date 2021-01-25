@@ -10,6 +10,8 @@ private:
     std::unique_ptr<Sprite> avatar;
 
     std::unique_ptr<Sprite> keyCard;
+    std::unique_ptr<Sprite> decoy;
+
 
 public:
     std::vector<Sprite *> sprites() override;

@@ -8,7 +8,6 @@
 #include <libgba-sprite-engine/gba_engine.h>
 #include "PodScene.h"
 #include "SpriteData.h"
-#include "crewmate.h"
 
 std::vector<Background *> PodScene::backgrounds() {
     return {};
@@ -30,26 +29,25 @@ void PodScene::load() {
             .buildPtr();
 
     keyCard = builder
-            .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
-            .withLocation(10,10) //location is now just a random value
+            .withData(ballTiles, sizeof(ballTiles))
+            .withLocation(10,10)
             .buildPtr();
 
-    auto dummy1 = builder
-            .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
-            .withLocation(230,10) //location is now just a random value
+    decoy = builder
+            .withData(ballTiles, sizeof(ballTiles))
+            .withLocation(230,10)
             .buildPtr();
-    auto dummy2 = builder
-            .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
-            .withLocation(10,150) //location is now just a random value
+    decoy = builder
+            .withData(ballTiles, sizeof(ballTiles))
+            .withLocation(10,150)
             .buildPtr();
-    auto dummy3 = builder
-            .withData(ballTiles, sizeof(ballTiles)) //needs to be tested to see if this is the right sprite
-            .withLocation(230,150) //location is now just a random value
+    decoy = builder
+            .withData(ballTiles, sizeof(ballTiles))
+            .withLocation(230,150)
             .buildPtr();
 }
 
 void PodScene::tick(u16 keys) {
-    Crewmate crewmate;
 
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
@@ -60,8 +58,15 @@ void PodScene::tick(u16 keys) {
     } else if(keys & KEY_DOWN) {
         avatar->flipVertically(false);
     } else if(keys & KEY_A) {
-        if (crewmate.interactableItem()){
-            crewmate.interact();
+        if (avatar->collidesWith(*keyCard)){
+            TextStream::instance().setText(std::string("You found the key card!") , 5, 10);
+            TextStream::instance().clear();
+        }else if (avatar->collidesWith(*decoy)){
+            TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
+            TextStream::instance().clear();
+        }else{
+            TextStream::instance().setText(std::string("No interactable item found!") , 5, 10);
+            TextStream::instance().clear();
         }
     } else if(keys & KEY_B) {
 

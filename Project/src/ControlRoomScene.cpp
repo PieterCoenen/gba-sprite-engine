@@ -10,7 +10,6 @@
 #include <libgba-sprite-engine/gba_engine.h>
 #include "PodScene.h"
 #include "SpriteData.h"
-#include "crewmate.h"
 
 std::vector<Background *> ControlRoomScene::backgrounds() {
     return {};
@@ -33,7 +32,6 @@ void ControlRoomScene::load() {
 }
 
 void ControlRoomScene::tick(u16 keys) {
-    Crewmate crewmate;
 
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
@@ -44,9 +42,9 @@ void ControlRoomScene::tick(u16 keys) {
     } else if(keys & KEY_DOWN) {
         avatar->flipVertically(false);
     } else if(keys & KEY_A) {
-        if (crewmate.interactableItem()){
-            crewmate.interact();
-        }
+        /*if (avatar->collidesWith(*)){
+
+        }*/
     } else if(keys & KEY_B) {
 
     }
