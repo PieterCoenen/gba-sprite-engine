@@ -12,13 +12,14 @@
 class StartScene : public Scene {
 private:
     std::vector<std::string> colors;
-    std::string color;
 
 public:
     std::vector<Sprite *> sprites() override;
     std::vector<Background *> backgrounds() override;
 
     StartScene(const std::shared_ptr<GBAEngine> &engine);
+
+    std::string color;
 
     void load() override;
     void tick(u16 keys) override;

@@ -9,9 +9,13 @@
 #include "PodScene.h"
 #include "SpriteData.h"
 #include "crewmate.h"
-#include "Item.h"
 #include "ControlRoomScene.h"
 #include "NASA_Astronaut_White.h"
+#include "NASA_Astronaut_Blue.h"
+#include "NASA_Astronaut_Green.h"
+#include "NASA_Astronaut_Purple.h"
+#include "NASA_Astronaut_Red.h"
+#include "NASA_Astronaut_Yellow.h"
 
 std::vector<Background *> PodScene::backgrounds() {
     return {};
@@ -41,10 +45,12 @@ void PodScene::load() {
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(230,10)
             .buildPtr();
+
     decoy = builder
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(10,150)
             .buildPtr();
+
     decoy = builder
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(230,150)
@@ -52,7 +58,7 @@ void PodScene::load() {
 
     door = builder
             //.withData(ballTiles, sizeof(ballTiles)) needs to be made
-            //.withLocation(230,150) needs to be searched
+            .withLocation(10,0)
             .buildPtr();
 }
 
