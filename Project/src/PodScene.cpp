@@ -6,6 +6,7 @@
 #include <libgba-sprite-engine/background/text_stream.h>
 #include <libgba-sprite-engine/gba/tonc_memdef.h>
 #include <libgba-sprite-engine/gba_engine.h>
+#include <unistd.h>
 #include "PodScene.h"
 #include "SpriteData.h"
 #include "crewmate.h"
@@ -111,17 +112,22 @@ void PodScene::tick(u16 keys) {
     } else if(keys & KEY_A) {
         if (avatar->collidesWith(*keyCard)){
             TextStream::instance().setText(std::string("You found the key card!") , 5, 10);
+            sleep(5);
             TextStream::instance().clear();
             crewmate.items.push_back("keyCard");
         }else if (avatar->collidesWith(*decoy)){
             TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
+            sleep(5);
             TextStream::instance().clear();
         }else if (avatar->collidesWith(*door)){
             if (crewmate.useItem("keyCard")){
+                TextStream::instance().setText(std::string("You will now go to the next room") , 5, 10);
+                sleep(3);
                 engine.get()->setScene(new ControlRoomScene(engine));
             }
         }else{
             TextStream::instance().setText(std::string("No interaction possible!") , 5, 10);
+            sleep(5);
             TextStream::instance().clear();
         }
     }
