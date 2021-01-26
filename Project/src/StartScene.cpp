@@ -17,7 +17,7 @@ void StartScene::fillColors() {
     colors.push_back("white");
     colors.push_back("green");
     colors.push_back("purple");
-    colors.push_back("Yellow");
+    colors.push_back("yellow");
     color = colors[0];
 }
 

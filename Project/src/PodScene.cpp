@@ -30,11 +30,45 @@ void PodScene::load() {
 
     SpriteBuilder<Sprite> builder;
 
-    avatar = builder
-            .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
-            .withSize(SIZE_16_16)
-            .withLocation(50, 50)
-            .buildPtr();
+    if (color == "white"){
+        avatar = builder
+                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withSize(SIZE_16_16)
+                .withLocation(50, 50)
+                .buildPtr();
+    } else if (color == "blue"){
+        avatar = builder
+                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withSize(SIZE_16_16)
+                .withLocation(50, 50)
+                .buildPtr();
+    } else if (color == "green"){
+        avatar = builder
+                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withSize(SIZE_16_16)
+                .withLocation(50, 50)
+                .buildPtr();
+    } else if (color == "purple"){
+        avatar = builder
+                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withSize(SIZE_16_16)
+                .withLocation(50, 50)
+                .buildPtr();
+    } else if (color == "red"){
+        avatar = builder
+                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withSize(SIZE_16_16)
+                .withLocation(50, 50)
+                .buildPtr();
+    } else{
+        avatar = builder
+                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withSize(SIZE_16_16)
+                .withLocation(50, 50)
+                .buildPtr();
+    }
+
+
 
     keyCard = builder
             .withData(ballTiles, sizeof(ballTiles))

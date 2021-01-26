@@ -4,6 +4,7 @@
 #include <libgba-sprite-engine/gba_engine.h>
 #include <libgba-sprite-engine/scene.h>
 #include <vector>
+#include "StartScene.h"
 
 class PodScene : public Scene {
 private:
@@ -19,6 +20,8 @@ public:
     std::vector<Background *> backgrounds() override;
 
     PodScene(std::shared_ptr<GBAEngine> engine, std::string color) : Scene(engine) {}
+
+    std::string color = this->color;
 
     void load() override;
     void tick(u16 keys) override;
