@@ -133,7 +133,7 @@ void PodScene::tick(u16 keys) {
             if (crewmate.useItem("keyCard")){
                 TextStream::instance().setText(std::string("You will now go to the next room") , 5, 10);
                 sleep(3);
-                engine.get()->setScene(new ControlRoomScene(engine));
+                engine.get()->setScene(new ControlRoomScene(engine, color));
             }
         }else{
             TextStream::instance().setText(std::string("No interaction possible!") , 5, 10);

@@ -14,11 +14,15 @@ class ControlRoomScene : public Scene{
 private:
     std::unique_ptr<Sprite> avatar;
 
+    std::unique_ptr<Background> bg;
+
 public:
     std::vector<Sprite *> sprites() override;
     std::vector<Background *> backgrounds() override;
 
-    ControlRoomScene(std::shared_ptr<GBAEngine> engine) : Scene(engine) {}
+    ControlRoomScene(std::shared_ptr<GBAEngine> engine, std::string color) : Scene(engine) {}
+
+    std::string color = this->color;
 
     void load() override;
     void tick(u16 keys) override;
