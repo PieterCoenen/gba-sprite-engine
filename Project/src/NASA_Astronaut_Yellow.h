@@ -1,9 +1,9 @@
 
-//{{BLOCK(NASA_Astronaut_White)
+//{{BLOCK(NASA_Astronaut_Yellow)
 
 //======================================================================
 //
-//	NASA_Astronaut_White, 96x128@8, 
+//	NASA_Astronaut_Yellow, 96x128@8,
 //	+ 192 tiles not compressed
 //	Total size: 12288 = 12288
 //
@@ -13,7 +13,7 @@
 //
 //======================================================================
 
-const unsigned char NASA_Astronaut_WhiteTiles[12288] __attribute__((aligned(4)))=
+const unsigned char NASA_Astronaut_YellowTiles[12288] __attribute__((aligned(4)))=
 {
 	0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,
 	0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,
@@ -880,4 +880,4 @@ const unsigned char NASA_Astronaut_WhiteTiles[12288] __attribute__((aligned(4)))
 	0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,0x08,
 };
 
-//}}BLOCK(NASA_Astronaut_White)
+//}}BLOCK(NASA_Astronaut_Yellow)

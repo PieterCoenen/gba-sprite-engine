@@ -38,31 +38,31 @@ void PodScene::load() {
                 .buildPtr();
     } else if (color == "blue"){
         avatar = builder
-                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withData(NASA_Astronaut_BlueTiles, sizeof(NASA_Astronaut_BlueTiles))
                 .withSize(SIZE_16_16)
                 .withLocation(50, 50)
                 .buildPtr();
     } else if (color == "green"){
         avatar = builder
-                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withData(NASA_Astronaut_GreenTiles, sizeof(NASA_Astronaut_GreenTiles))
                 .withSize(SIZE_16_16)
                 .withLocation(50, 50)
                 .buildPtr();
     } else if (color == "purple"){
         avatar = builder
-                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withData(NASA_Astronaut_PurpleTiles, sizeof(NASA_Astronaut_PurpleTiles))
                 .withSize(SIZE_16_16)
                 .withLocation(50, 50)
                 .buildPtr();
     } else if (color == "red"){
         avatar = builder
-                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withData(NASA_Astronaut_RedTiles, sizeof(NASA_Astronaut_RedTiles))
                 .withSize(SIZE_16_16)
                 .withLocation(50, 50)
                 .buildPtr();
     } else{
         avatar = builder
-                .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
+                .withData(NASA_Astronaut_YellowTiles, sizeof(NASA_Astronaut_YellowTiles))
                 .withSize(SIZE_16_16)
                 .withLocation(50, 50)
                 .buildPtr();
