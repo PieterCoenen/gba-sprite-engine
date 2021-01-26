@@ -4,6 +4,7 @@
 #include "SplashScreen.h"
 #include "PodScene.h"
 #include "StartScene.h"
+#include "Space1.h"
 
 SplashScreen::SplashScreen(const std::shared_ptr<GBAEngine> &engine) : Scene(engine) {}
 
@@ -27,6 +28,6 @@ void SplashScreen::load() {
     engine.get()->disableText();
 
 
-
-    bg.get()->useMapScreenBlock(24);
+    bg = std::unique_ptr<Background>(new Background(1, Space1Tiles, sizeof(Space1Tiles), Space1Map, sizeof(Space1Map)));
+    bg.get()->useMapScreenBlock(16);
 }
