@@ -44,12 +44,18 @@ void StartScene::tick(u16 keys) {
     TextStream::instance().setText(std::string("Color: ") + std::string(color), 5, 1);
 
     if(keys & KEY_RIGHT) {
-        if (0<=i<5){
+        if (0 <= i < 5) {
+            if (i >= 5) {
+                i = 0;
+            }
             i++;
             color = colors[i];
         }
     }else if(keys & KEY_LEFT) {
-        if (0>i>=1){
+        if (5>i>=0){
+            if (i <= 0) {
+                i = 5;
+            }
             i--;
             color = colors[i];
         }
