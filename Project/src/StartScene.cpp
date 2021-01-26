@@ -9,6 +9,8 @@
 #include "StartScene.h"
 #include "PodScene.h"
 
+int i = 0;
+
 StartScene::StartScene(const std::shared_ptr<GBAEngine> &engine) : Scene(engine), color() {}
 
 void StartScene::fillColors() {
@@ -40,10 +42,11 @@ void StartScene::load() {
 
 void StartScene::tick(u16 keys) {
     TextStream::instance().setText(std::string("Color: ") + std::string(color), 5, 1);
-    int i = 0;
+
     if(keys & KEY_START) {
         engine.get()->setScene(new PodScene(engine, color));
-    } else if(keys & KEY_RIGHT) {
+    }
+    if(keys & KEY_RIGHT) {
         if (0<=i<4){
             i++;
             color = colors[i];
