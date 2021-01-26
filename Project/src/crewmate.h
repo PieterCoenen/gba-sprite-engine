@@ -9,22 +9,15 @@
 #include <libgba-sprite-engine/scene.h>
 #include <vector>
 
-#include "Item.h"
-
 class Crewmate{
 private:
     std::string color;
 
 public:
-    Crewmate();
 
     std::vector<std::string> items;
 
-    void interact();
-
     bool useItem(std::string item);
-
-    bool interactableItem();
 };
 
 

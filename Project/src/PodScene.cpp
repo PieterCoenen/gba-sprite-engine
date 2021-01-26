@@ -99,7 +99,6 @@ void PodScene::load() {
 void PodScene::tick(u16 keys) {
 
     Crewmate crewmate;
-    Item item;
 
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
@@ -122,7 +121,7 @@ void PodScene::tick(u16 keys) {
                 engine.get()->setScene(new ControlRoomScene(engine));
             }
         }else{
-            TextStream::instance().setText(std::string("No interactable item found!") , 5, 10);
+            TextStream::instance().setText(std::string("No interaction possible!") , 5, 10);
             TextStream::instance().clear();
         }
     }

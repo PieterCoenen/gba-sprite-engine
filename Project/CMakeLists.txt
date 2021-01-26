@@ -6,12 +6,8 @@ add_executable(${PROJECT_NAME}.elf
         src/SplashScreen.h
         src/StartScene.cpp
         src/StartScene.h
-        src/Item.cpp
-        src/Item.h
         src/crewmate.cpp
         src/crewmate.h
-        src/Element.cpp
-        src/Element.h
         src/SpriteData.h
         src/PodScene.h
         src/PodScene.cpp
