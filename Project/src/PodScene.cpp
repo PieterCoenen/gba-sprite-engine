@@ -11,6 +11,7 @@
 #include "crewmate.h"
 #include "Item.h"
 #include "ControlRoomScene.h"
+#include "NASA_Astronaut_White.h"
 
 std::vector<Background *> PodScene::backgrounds() {
     return {};
@@ -26,7 +27,7 @@ void PodScene::load() {
     SpriteBuilder<Sprite> builder;
 
     avatar = builder
-            //.withData()
+            .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
             .withSize(SIZE_16_16)
             .withLocation(50, 50)
             .buildPtr();
@@ -49,7 +50,7 @@ void PodScene::load() {
             .withLocation(230,150)
             .buildPtr();
 
-    decoy = builder
+    door = builder
             //.withData(ballTiles, sizeof(ballTiles)) needs to be made
             //.withLocation(230,150) needs to be searched
             .buildPtr();
