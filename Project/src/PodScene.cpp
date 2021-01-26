@@ -21,7 +21,7 @@
 
 std::vector<Background *> PodScene::backgrounds() {
     return {
-        bg.get();
+        bg.get()
     };
 }
 
