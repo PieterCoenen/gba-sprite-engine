@@ -32,6 +32,8 @@ std::vector<Sprite *> PodScene::sprites() {
 void PodScene::load() {
     engine.get()->enableText();
 
+    backgroundPalette = std::unique_ptr<BackgroundPaletteManager>(new BackgroundPaletteManager(Space1Pal, sizeof(Space1Pal)));
+
     SpriteBuilder<Sprite> builder;
 
     if (color == "white"){

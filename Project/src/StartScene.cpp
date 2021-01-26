@@ -36,7 +36,7 @@ void StartScene::load() {
 
     TextStream::instance().setText(std::string("Space disaster"), 1, 1);
     TextStream::instance().setText(std::string("Left/Right to change color"), 10, 1);
-    TextStream::instance().setText(std::string("Press Start to play"), 12, 1);
+    TextStream::instance().setText(std::string("Press A to play"), 12, 1);
 
 }
 
@@ -59,7 +59,7 @@ void StartScene::tick(u16 keys) {
             i--;
             color = colors[i];
         }
-    }else if(keys & KEY_START) {
+    }else if(keys & KEY_A) {
         engine.get()->setScene(new PodScene(engine, color));
     }
 }

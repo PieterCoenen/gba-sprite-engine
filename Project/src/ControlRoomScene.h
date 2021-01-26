@@ -20,9 +20,11 @@ public:
     std::vector<Sprite *> sprites() override;
     std::vector<Background *> backgrounds() override;
 
-    ControlRoomScene(std::shared_ptr<GBAEngine> engine, std::string color) : Scene(engine) {}
+    ControlRoomScene(std::shared_ptr<GBAEngine> engine, std::string color) : Scene(engine) {
+        color = this->color;
+    }
 
-    std::string color = this->color;
+    std::string color;
 
     void load() override;
     void tick(u16 keys) override;
