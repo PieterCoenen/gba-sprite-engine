@@ -108,14 +108,21 @@ void PodScene::tick(u16 keys) {
 
     Crewmate crewmate;
 
+    int xPos = avatar->getX();
+    int yPos = avatar->getY();
+
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
+        avatar->moveTo(xPos+1,yPos);
     } else if(keys & KEY_LEFT) {
         avatar->flipHorizontally(true);
+        avatar->moveTo(xPos-1,yPos);
     } else if(keys & KEY_UP) {
         avatar->flipVertically(true);
+        avatar->moveTo(xPos,yPos-1);
     } else if(keys & KEY_DOWN) {
         avatar->flipVertically(false);
+        avatar->moveTo(xPos,yPos+1);
     } else if(keys & KEY_A) {
         if (avatar->collidesWith(*keyCard)){
             TextStream::instance().setText(std::string("You found the key card!") , 5, 10);
