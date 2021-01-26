@@ -47,7 +47,7 @@ void StartScene::tick(u16 keys) {
         engine.get()->setScene(new PodScene(engine, color));
     }
     if(keys & KEY_RIGHT) {
-        if (0<=i<4){
+        if (0<=i<5){
             i++;
             color = colors[i];
         }
