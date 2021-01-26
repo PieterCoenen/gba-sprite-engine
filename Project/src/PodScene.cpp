@@ -26,12 +26,13 @@ std::vector<Background *> PodScene::backgrounds() {
 }
 
 std::vector<Sprite *> PodScene::sprites() {
-    return {avatar.get(), keyCard.get()};
+    return {avatar.get(), keyCard.get(), decoy.get(), door.get()};
 }
 
 void PodScene::load() {
     engine.get()->enableText();
 
+    foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(sharedPal, sizeof(sharedPal)));
     backgroundPalette = std::unique_ptr<BackgroundPaletteManager>(new BackgroundPaletteManager(Space1Pal, sizeof(Space1Pal)));
 
     SpriteBuilder<Sprite> builder;
@@ -39,42 +40,36 @@ void PodScene::load() {
     if (color == "white"){
         avatar = builder
                 .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
                 .buildPtr();
     } else if (color == "blue"){
         avatar = builder
                 .withData(NASA_Astronaut_BlueTiles, sizeof(NASA_Astronaut_BlueTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
                 .buildPtr();
     } else if (color == "green"){
         avatar = builder
                 .withData(NASA_Astronaut_GreenTiles, sizeof(NASA_Astronaut_GreenTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
                 .buildPtr();
     } else if (color == "purple"){
         avatar = builder
                 .withData(NASA_Astronaut_PurpleTiles, sizeof(NASA_Astronaut_PurpleTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
                 .buildPtr();
     } else if (color == "red"){
         avatar = builder
                 .withData(NASA_Astronaut_RedTiles, sizeof(NASA_Astronaut_RedTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
                 .buildPtr();
     } else{
         avatar = builder
                 .withData(NASA_Astronaut_YellowTiles, sizeof(NASA_Astronaut_YellowTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
                 .buildPtr();
@@ -101,7 +96,7 @@ void PodScene::load() {
             .buildPtr();
 
     door = builder
-            //.withData(ballTiles, sizeof(ballTiles)) needs to be made
+            .withData(ballTiles, sizeof(ballTiles))
             .withLocation(10,0)
             .buildPtr();
 
