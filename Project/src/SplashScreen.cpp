@@ -27,7 +27,7 @@ void SplashScreen::tick(u16 keys) {
 void SplashScreen::load() {
     engine.get()->disableText();
 
-    //backgroundPalette = std::unique_ptr<BackgroundPaletteManager>(new BackgroundPaletteManager(splashimagePal, sizeof(splashimagePal)));
+    backgroundPalette = std::unique_ptr<BackgroundPaletteManager>(new BackgroundPaletteManager(Space1Pal, sizeof(Space1Pal)));
 
     bg = std::unique_ptr<Background>(new Background(1, Space1Tiles, sizeof(Space1Tiles), Space1Map, sizeof(Space1Map)));
     bg.get()->useMapScreenBlock(24);
