@@ -11,7 +11,9 @@ private:
     std::unique_ptr<Sprite> avatar;
 
     std::unique_ptr<Sprite> keyCard;
-    std::unique_ptr<Sprite> decoy;
+    std::unique_ptr<Sprite> decoy1;
+    std::unique_ptr<Sprite> decoy2;
+    std::unique_ptr<Sprite> decoy3;
 
     std::unique_ptr<Sprite> door;
 

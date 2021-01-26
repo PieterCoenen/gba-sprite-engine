@@ -26,7 +26,7 @@ std::vector<Background *> PodScene::backgrounds() {
 }
 
 std::vector<Sprite *> PodScene::sprites() {
-    return {avatar.get(), keyCard.get(), decoy.get(), door.get()};
+    return {avatar.get(), keyCard.get(), decoy1.get(), decoy2.get(), decoy3.get(), door.get()};
 }
 
 void PodScene::load() {
@@ -77,22 +77,22 @@ void PodScene::load() {
 
     keyCard = builder
             .withData(ballTiles, sizeof(ballTiles))
-            .withLocation(10,10)
+            .withLocation(50,10)
             .buildPtr();
 
-    decoy = builder
+    decoy1 = builder
             .withData(ballTiles, sizeof(ballTiles))
-            .withLocation(230,10)
+            .withLocation(200,10)
             .buildPtr();
 
-    decoy = builder
+    decoy2 = builder
             .withData(ballTiles, sizeof(ballTiles))
-            .withLocation(10,150)
+            .withLocation(10,120)
             .buildPtr();
 
-    decoy = builder
+    decoy3 = builder
             .withData(ballTiles, sizeof(ballTiles))
-            .withLocation(230,150)
+            .withLocation(200,120)
             .buildPtr();
 
     door = builder
@@ -129,7 +129,15 @@ void PodScene::tick(u16 keys) {
             sleep(5);
             TextStream::instance().clear();
             crewmate.items.push_back("keyCard");
-        }else if (avatar->collidesWith(*decoy)){
+        }else if (avatar->collidesWith(*decoy1)){
+            TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
+            sleep(5);
+            TextStream::instance().clear();
+        }else if (avatar->collidesWith(*decoy3)){
+            TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
+            sleep(5);
+            TextStream::instance().clear();
+        }else if (avatar->collidesWith(*decoy2)){
             TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
             sleep(5);
             TextStream::instance().clear();
