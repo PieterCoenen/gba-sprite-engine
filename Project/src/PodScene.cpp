@@ -42,62 +42,73 @@ void PodScene::load() {
                 .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else if (color == "blue"){
         avatar = builder
                 .withData(NASA_Astronaut_BlueTiles, sizeof(NASA_Astronaut_BlueTiles))
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else if (color == "green"){
         avatar = builder
                 .withData(NASA_Astronaut_GreenTiles, sizeof(NASA_Astronaut_GreenTiles))
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else if (color == "purple"){
         avatar = builder
                 .withData(NASA_Astronaut_PurpleTiles, sizeof(NASA_Astronaut_PurpleTiles))
-                .withAnimated(12, 3)
+                //.withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else if (color == "red"){
         avatar = builder
                 .withData(NASA_Astronaut_RedTiles, sizeof(NASA_Astronaut_RedTiles))
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else{
         avatar = builder
                 .withData(NASA_Astronaut_YellowTiles, sizeof(NASA_Astronaut_YellowTiles))
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     }
 
     keyCard = builder
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(50,10)
+            .withinBounds()
             .buildPtr();
 
     decoy1 = builder
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(200,10)
+            .withinBounds()
             .buildPtr();
 
     decoy2 = builder
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(10,120)
+            .withinBounds()
             .buildPtr();
 
     decoy3 = builder
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(200,120)
+            .withinBounds()
             .buildPtr();
 
     door = builder
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(10,0)
+            .withinBounds()
             .buildPtr();
 
     bg = std::unique_ptr<Background>(new Background(1, Space1Tiles, sizeof(Space1Tiles), Space1Map, sizeof(Space1Map)));
@@ -147,10 +158,6 @@ void PodScene::tick(u16 keys) {
                 sleep(3);
                 engine.get()->setScene(new ControlRoomScene(engine, color));
             }
-        }else{
-            TextStream::instance().setText(std::string("No interaction possible!") , 5, 10);
-            sleep(5);
-            TextStream::instance().clear();
         }
     }
 }
