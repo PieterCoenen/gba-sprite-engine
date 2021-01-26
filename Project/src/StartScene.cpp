@@ -36,25 +36,24 @@ void StartScene::load() {
 
     TextStream::instance().setText(std::string("Space disaster"), 1, 1);
     TextStream::instance().setText(std::string("Left/Right to change color"), 10, 1);
-    TextStream::instance().setText(std::string("Start to play"), 12, 1);
+    TextStream::instance().setText(std::string("Press Start to play"), 12, 1);
 
 }
 
 void StartScene::tick(u16 keys) {
     TextStream::instance().setText(std::string("Color: ") + std::string(color), 5, 1);
 
-    if(keys & KEY_START) {
-        engine.get()->setScene(new PodScene(engine, color));
-    }
     if(keys & KEY_RIGHT) {
         if (0<=i<5){
             i++;
             color = colors[i];
         }
-    } else if(keys & KEY_LEFT) {
+    }else if(keys & KEY_LEFT) {
         if (0>i>=1){
             i--;
             color = colors[i];
         }
+    }else if(keys & KEY_START) {
+        engine.get()->setScene(new PodScene(engine, color));
     }
 }
