@@ -17,13 +17,16 @@
 #include "NASA_Astronaut_Purple.h"
 #include "NASA_Astronaut_Red.h"
 #include "NASA_Astronaut_Yellow.h"
+#include "Space1.h"
 
 std::vector<Background *> PodScene::backgrounds() {
-    return {};
+    return {
+        bg.get();
+    };
 }
 
 std::vector<Sprite *> PodScene::sprites() {
-    return { avatar.get(), keyCard.get()};
+    return {avatar.get(), keyCard.get()};
 }
 
 void PodScene::load() {
@@ -69,8 +72,6 @@ void PodScene::load() {
                 .buildPtr();
     }
 
-
-
     keyCard = builder
             .withData(ballTiles, sizeof(ballTiles))
             .withLocation(10,10)
@@ -95,6 +96,9 @@ void PodScene::load() {
             //.withData(ballTiles, sizeof(ballTiles)) needs to be made
             .withLocation(10,0)
             .buildPtr();
+
+    bg = std::unique_ptr<Background>(new Background(1, Space1Tiles, sizeof(Space1Tiles), Space1Map, sizeof(Space1Map)));
+    bg.get()->useMapScreenBlock(16);
 }
 
 void PodScene::tick(u16 keys) {

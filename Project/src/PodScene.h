@@ -15,6 +15,8 @@ private:
 
     std::unique_ptr<Sprite> door;
 
+    std::unique_ptr<Background> bg;
+
 public:
     std::vector<Sprite *> sprites() override;
     std::vector<Background *> backgrounds() override;
