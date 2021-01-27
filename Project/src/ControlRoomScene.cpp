@@ -6,8 +6,6 @@
 
 #include <libgba-sprite-engine/sprites/sprite_builder.h>
 #include <libgba-sprite-engine/background/text_stream.h>
-#include <libgba-sprite-engine/gba/tonc_memdef.h>
-#include <libgba-sprite-engine/gba_engine.h>
 #include "PodScene.h"
 #include "SpriteData.h"
 #include "NASA_Astronaut_White.h"
@@ -29,49 +27,52 @@ std::vector<Sprite *> ControlRoomScene::sprites() {
 void ControlRoomScene::load() {
     engine.get()->enableText();
 
+    foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(sharedPal, sizeof(sharedPal)));
+    backgroundPalette = std::unique_ptr<BackgroundPaletteManager>(new BackgroundPaletteManager(Space1Pal, sizeof(Space1Pal)));
+
     SpriteBuilder<Sprite> builder;
 
     if (color == "white"){
         avatar = builder
                 .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else if (color == "blue"){
         avatar = builder
                 .withData(NASA_Astronaut_BlueTiles, sizeof(NASA_Astronaut_BlueTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else if (color == "green"){
         avatar = builder
                 .withData(NASA_Astronaut_GreenTiles, sizeof(NASA_Astronaut_GreenTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else if (color == "purple"){
         avatar = builder
                 .withData(NASA_Astronaut_PurpleTiles, sizeof(NASA_Astronaut_PurpleTiles))
-                .withSize(SIZE_16_16)
-                .withAnimated(12, 3)
+                        //.withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else if (color == "red"){
         avatar = builder
                 .withData(NASA_Astronaut_RedTiles, sizeof(NASA_Astronaut_RedTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     } else{
         avatar = builder
                 .withData(NASA_Astronaut_YellowTiles, sizeof(NASA_Astronaut_YellowTiles))
-                .withSize(SIZE_16_16)
                 .withAnimated(12, 3)
                 .withLocation(50, 50)
+                .withinBounds()
                 .buildPtr();
     }
 
@@ -81,19 +82,22 @@ void ControlRoomScene::load() {
 
 void ControlRoomScene::tick(u16 keys) {
 
+    int xPos = avatar->getX();
+    int yPos = avatar->getY();
+
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
+        avatar->moveTo(xPos+1,yPos);
     } else if(keys & KEY_LEFT) {
         avatar->flipHorizontally(true);
+        avatar->moveTo(xPos-1,yPos);
     } else if(keys & KEY_UP) {
         avatar->flipVertically(true);
+        avatar->moveTo(xPos,yPos-1);
     } else if(keys & KEY_DOWN) {
         avatar->flipVertically(false);
+        avatar->moveTo(xPos,yPos+1);
     } else if(keys & KEY_A) {
-        /*if (avatar->collidesWith(*)){
-
-        }*/
-    } else if(keys & KEY_B) {
-
+        TextStream::instance().setText(std::string("Finished so far!") , 5, 3);
     }
 }

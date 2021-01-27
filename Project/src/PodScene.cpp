@@ -6,7 +6,6 @@
 #include <libgba-sprite-engine/background/text_stream.h>
 #include <libgba-sprite-engine/gba/tonc_memdef.h>
 #include <libgba-sprite-engine/gba_engine.h>
-#include <unistd.h>
 #include "PodScene.h"
 #include "SpriteData.h"
 #include "crewmate.h"
@@ -121,7 +120,7 @@ void PodScene::tick(u16 keys) {
 
     int xPos = avatar->getX();
     int yPos = avatar->getY();
-    std::string item;
+    std::string item = "keyCard";
 
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
