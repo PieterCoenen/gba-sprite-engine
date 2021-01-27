@@ -121,6 +121,7 @@ void PodScene::tick(u16 keys) {
 
     int xPos = avatar->getX();
     int yPos = avatar->getY();
+    std::string item;
 
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
@@ -136,27 +137,27 @@ void PodScene::tick(u16 keys) {
         avatar->moveTo(xPos,yPos+1);
     } else if(keys & KEY_A) {
         if (avatar->collidesWith(*keyCard)){
-            TextStream::instance().setText(std::string("You found the key card!") , 5, 10);
-            sleep(5);
             TextStream::instance().clear();
+            TextStream::instance().setText(std::string("Key card!") , 5, 10);
             crewmate.items.push_back("keyCard");
+            item = "keyCard";
         }else if (avatar->collidesWith(*decoy1)){
-            TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
-            sleep(5);
             TextStream::instance().clear();
+            TextStream::instance().setText(std::string("Dummy!") , 5, 10);
         }else if (avatar->collidesWith(*decoy3)){
-            TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
-            sleep(5);
             TextStream::instance().clear();
+            TextStream::instance().setText(std::string("Dummy!") , 5, 10);
         }else if (avatar->collidesWith(*decoy2)){
-            TextStream::instance().setText(std::string("Too bad this was a dummy!") , 5, 10);
-            sleep(5);
             TextStream::instance().clear();
+            TextStream::instance().setText(std::string("Dummy!") , 5, 10);
         }else if (avatar->collidesWith(*door)){
-            if (crewmate.useItem("keyCard")){
-                TextStream::instance().setText(std::string("You will now go to the next room") , 5, 10);
-                sleep(3);
+            if (item == "keyCard"){
+                TextStream::instance().clear();
+                TextStream::instance().setText(std::string("Teleporting to next room") , 5, 3);
                 engine.get()->setScene(new ControlRoomScene(engine, color));
+            } else{
+                TextStream::instance().clear();
+                TextStream::instance().setText(std::string("You need the key card") , 5, 3);
             }
         }
     }

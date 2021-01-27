@@ -60,6 +60,7 @@ void StartScene::tick(u16 keys) {
             color = colors[i];
         }
     }else if(keys & KEY_A) {
+        TextStream::instance().clear();
         engine.get()->setScene(new PodScene(engine, color));
     }
 }
