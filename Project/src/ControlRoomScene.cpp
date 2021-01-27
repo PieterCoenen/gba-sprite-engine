@@ -27,12 +27,12 @@ std::vector<Sprite *> ControlRoomScene::sprites() {
 void ControlRoomScene::load() {
     engine.get()->enableText();
 
-    foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(sharedPal, sizeof(sharedPal)));
     backgroundPalette = std::unique_ptr<BackgroundPaletteManager>(new BackgroundPaletteManager(Space1Pal, sizeof(Space1Pal)));
 
     SpriteBuilder<Sprite> builder;
 
     if (color == "white"){
+        foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(NASA_Astronaut_WhitePal, sizeof(NASA_Astronaut_WhitePal)));
         avatar = builder
                 .withData(NASA_Astronaut_WhiteTiles, sizeof(NASA_Astronaut_WhiteTiles))
                 .withAnimated(12, 3)
@@ -40,6 +40,7 @@ void ControlRoomScene::load() {
                 .withinBounds()
                 .buildPtr();
     } else if (color == "blue"){
+        foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(NASA_Astronaut_BluePal, sizeof(NASA_Astronaut_BluePal)));
         avatar = builder
                 .withData(NASA_Astronaut_BlueTiles, sizeof(NASA_Astronaut_BlueTiles))
                 .withAnimated(12, 3)
@@ -47,6 +48,7 @@ void ControlRoomScene::load() {
                 .withinBounds()
                 .buildPtr();
     } else if (color == "green"){
+        foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(NASA_Astronaut_GreenPal, sizeof(NASA_Astronaut_GreenPal)));
         avatar = builder
                 .withData(NASA_Astronaut_GreenTiles, sizeof(NASA_Astronaut_GreenTiles))
                 .withAnimated(12, 3)
@@ -54,6 +56,7 @@ void ControlRoomScene::load() {
                 .withinBounds()
                 .buildPtr();
     } else if (color == "purple"){
+        foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(NASA_Astronaut_PurplePal, sizeof(NASA_Astronaut_PurplePal)));
         avatar = builder
                 .withData(NASA_Astronaut_PurpleTiles, sizeof(NASA_Astronaut_PurpleTiles))
                         //.withAnimated(12, 3)
@@ -61,6 +64,7 @@ void ControlRoomScene::load() {
                 .withinBounds()
                 .buildPtr();
     } else if (color == "red"){
+        foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(NASA_Astronaut_RedPal, sizeof(NASA_Astronaut_RedPal)));
         avatar = builder
                 .withData(NASA_Astronaut_RedTiles, sizeof(NASA_Astronaut_RedTiles))
                 .withAnimated(12, 3)
@@ -68,6 +72,7 @@ void ControlRoomScene::load() {
                 .withinBounds()
                 .buildPtr();
     } else{
+        foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(NASA_Astronaut_YellowPal, sizeof(NASA_Astronaut_YellowPal)));
         avatar = builder
                 .withData(NASA_Astronaut_YellowTiles, sizeof(NASA_Astronaut_YellowTiles))
                 .withAnimated(12, 3)
