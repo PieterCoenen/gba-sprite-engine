@@ -72,6 +72,8 @@ const unsigned int block_redTiles[32] __attribute__((aligned(4)))=
 
 //}}BLOCK(block_red)
 
+//this has been copied from one of the demos in the project
+
 const unsigned short sharedPal[84] __attribute__((aligned(4)))=
         {
                 0x0000,0x3AE2,0x7BBD,0x4042,0x008C,0x3614,0x633B,0x1151,
