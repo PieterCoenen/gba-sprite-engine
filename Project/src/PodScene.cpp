@@ -18,6 +18,8 @@
 #include "NASA_Astronaut_Yellow.h"
 #include "Space1.h"
 
+std::string item;
+
 std::vector<Background *> PodScene::backgrounds() {
     return {
         bg.get()
@@ -120,7 +122,6 @@ void PodScene::tick(u16 keys) {
 
     int xPos = avatar->getX();
     int yPos = avatar->getY();
-    std::string item = "keyCard";
 
     if(keys & KEY_RIGHT) {
         avatar->flipHorizontally(false);
