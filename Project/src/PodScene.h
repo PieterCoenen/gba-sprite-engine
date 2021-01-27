@@ -24,7 +24,7 @@ public:
     std::vector<Background *> backgrounds() override;
 
     PodScene(std::shared_ptr<GBAEngine> engine, std::string color) : Scene(engine) {
-        color = this->color;
+        this->color = color;
     }
 
     std::string color;
