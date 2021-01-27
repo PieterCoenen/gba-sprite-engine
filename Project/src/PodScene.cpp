@@ -65,7 +65,7 @@ void PodScene::load() {
         foregroundPalette = std::unique_ptr<ForegroundPaletteManager>(new ForegroundPaletteManager(NASA_Astronaut_PurplePal, sizeof(NASA_Astronaut_PurplePal)));
         avatar = builder
                 .withData(NASA_Astronaut_PurpleTiles, sizeof(NASA_Astronaut_PurpleTiles))
-                //.withAnimated(12, 3)
+                .withAnimated(12, 3)
                 .withLocation(50, 50)
                 .withinBounds()
                 .buildPtr();
