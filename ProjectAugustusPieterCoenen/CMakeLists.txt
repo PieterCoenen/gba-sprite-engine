@@ -1,7 +1,13 @@
 project(HarvestMoonClone)
 
 add_executable(${PROJECT_NAME}.elf
-        )
+        src/main.cpp
+        src/SplashScreen.cpp
+        src/SplashScreen.h
+        src/StartScreen.cpp
+        src/StartScreen.h
+        src/MainScene.cpp
+        src/MainScene.h)
 
 target_link_libraries(${PROJECT_NAME}.elf gba-sprite-engine)
 

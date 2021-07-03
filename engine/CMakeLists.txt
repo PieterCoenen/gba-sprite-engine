@@ -17,7 +17,7 @@ add_library(${PROJECT_NAME}
         src/background/text_stream.cpp
         src/background/background.cpp
         src/effects/fade_out_scene.cpp
-        src/sound_control.cpp src/scene.cpp src/timer.cpp include/libgba-sprite-engine/gbavector.h src/gbavector.cpp ../Project/src/main.cpp ../Project/src/crewmate.h ../Project/src/crewmate.cpp ../Project/src/StartScene.h ../Project/src/StartScene.cpp ../Project/src/PodScene.cpp ../Project/src/SpriteData.h ../Project/src/ControlRoomScene.cpp ../Project/src/ControlRoomScene.h ../ProjectAugustusPieterCoenen/src/SplashScreen.cpp ../ProjectAugustusPieterCoenen/src/SplashScreen.h ../ProjectAugustusPieterCoenen/src/StartScreen.cpp ../ProjectAugustusPieterCoenen/src/StartScreen.h)
+        src/sound_control.cpp src/scene.cpp src/timer.cpp include/libgba-sprite-engine/gbavector.h src/gbavector.cpp ../Project/src/main.cpp ../Project/src/crewmate.h ../Project/src/crewmate.cpp ../Project/src/StartScene.h ../Project/src/StartScene.cpp ../Project/src/PodScene.cpp ../Project/src/SpriteData.h ../Project/src/ControlRoomScene.cpp ../Project/src/ControlRoomScene.h ../ProjectAugustusPieterCoenen/src/SplashScreen.cpp ../ProjectAugustusPieterCoenen/src/SplashScreen.h ../ProjectAugustusPieterCoenen/src/StartScreen.cpp ../ProjectAugustusPieterCoenen/src/StartScreen.h ../ProjectAugustusPieterCoenen/src/main.cpp ../ProjectAugustusPieterCoenen/src/MainScene.cpp ../ProjectAugustusPieterCoenen/src/MainScene.h)
 
 target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
