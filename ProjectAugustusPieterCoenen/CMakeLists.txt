@@ -7,7 +7,11 @@ add_executable(${PROJECT_NAME}.elf
         src/StartScreen.cpp
         src/StartScreen.h
         src/MainScene.cpp
-        src/MainScene.h)
+        src/MainScene.h
+        src/HouseScene.cpp
+        src/HouseScene.h
+        src/InventoryScene.cpp
+        src/InventoryScene.h)
 
 target_link_libraries(${PROJECT_NAME}.elf gba-sprite-engine)
 
