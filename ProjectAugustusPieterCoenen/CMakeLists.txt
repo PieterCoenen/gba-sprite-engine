@@ -11,7 +11,9 @@ add_executable(${PROJECT_NAME}.elf
         src/HouseScene.cpp
         src/HouseScene.h
         src/InventoryScene.cpp
-        src/InventoryScene.h)
+        src/InventoryScene.h
+        src/Tool.cpp
+        src/Tool.h)
 
 target_link_libraries(${PROJECT_NAME}.elf gba-sprite-engine)
 
