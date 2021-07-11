@@ -19,8 +19,7 @@ std::vector<Sprite *> InventoryScene::sprites() {
 }
 
 void InventoryScene::load() {
-
-
+    TextStream::instance().setText(std::string("INVENTORY"), 1, 1);
 }
 
 void InventoryScene::tick(u16 keys) {
