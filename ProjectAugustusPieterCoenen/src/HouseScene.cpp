@@ -43,6 +43,6 @@ void HouseScene::tick(u16 keys) {
     }else if(keys & KEY_A) {
 
     }else if(keys & KEY_START){
-        engine->setScene(new InventoryScene(engine));
+        engine->setScene(new InventoryScene(engine, "start"));
     }
 }

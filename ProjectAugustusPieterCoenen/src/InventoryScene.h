@@ -11,14 +11,17 @@
 
 class InventoryScene : public Scene {
 private:
-    std::vector<std::string> colors;
+
 
 public:
     std::vector<Sprite *> sprites() override;
     std::vector<Background *> backgrounds() override;
 
-    InventoryScene(const std::shared_ptr<GBAEngine> &engine);
+    InventoryScene(const std::shared_ptr<GBAEngine> &engine, std::string scene) : Scene(engine) {
+        this->scene = scene;
+    }
 
+    std::string scene;
 
     void load() override;
     void tick(u16 keys) override;
