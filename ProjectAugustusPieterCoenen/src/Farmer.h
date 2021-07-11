@@ -17,7 +17,15 @@ private:
 
 public:
     Tool equipedTool;
+    bool toolEquiped;
 
+    void plantCrop(Crop crop);
+
+    void harvestCrop(Crop crop);
+
+    void equipTool(Tool tool);
+
+    void dequipTool(Tool emptyTool);
 };
 
 

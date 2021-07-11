@@ -11,7 +11,9 @@
 
 class HouseScene : public Scene {
 private:
-    std::vector<std::string> colors;
+    std::unique_ptr<Sprite> avatar;
+
+    std::unique_ptr<Background> bg;
 
 public:
     std::vector<Sprite *> sprites() override;
